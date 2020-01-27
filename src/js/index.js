@@ -10,18 +10,50 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  let myName = "Lucy";
+  if (variables.name != null) myName = variables.name;
+
+  let myLastName = "Boilett";
+  if (variables.lastname != null) myLastName = variables.lastname;
+
+  let mysocialMediaPosition = "positiom-right";
+  if (variables.socialMediaPosition != null) {
+    mysocialMediaPosition = variables.socialMediaPosition;
+  }
+
+  let twitter = "DaiDai";
+  if (variables.twitter != null) twitter = variables.twitter;
+
+  let github = "DGumren";
+  if (variables.github != null) github = variables.github;
+
+  let linkedin = "Dathaniel Gumren";
+  if (variables.linkedin != null) linkedin = variables.linkedin;
+
+  let instagram = "yxng_dai_blood";
+  if (variables.instagram != null) instagram = variables.instagram;
+
+  let role = "Web Developer";
+  if (variables.role != null) role = variables.role;
+
+  let city = "Miami";
+  if (variables.city != null) city = variables.city;
+
+  let country = "USA";
+  if (variables.country != null) country = variables.country;
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+          <h1>${myName} ${myLastName}</h1>
+          <h2>${role}</h2>
+          <h3>${city} ${country}</h3>
+          <ul class="${mysocialMediaPosition}">
+            <li><a href="https://twitter.com/${twitter}"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${github}"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${linkedin}"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
